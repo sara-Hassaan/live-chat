@@ -1,0 +1,86 @@
+use livechat
+
+db.createCollection( "login")
+db.createCollection("stat")
+db.createCollection("user")
+db.createCollection("groups")
+
+db.login.insert([
+                {userId:1,username:"ahmed",password:"5659500153"},
+                {userId:2,username:"ali",password:"2920291724"},
+                {userId:3,username:"salam",password:"7384419568"},
+                {userId:4,username:"heba",password:"3037751483"},
+                {userId:5,username:"sara",password:"8278971578"},
+                {userId:6,username:"reem",password:"6174299440"},
+                {userId:7,username:"maha",password:"2868694878"},
+                {userId:8,username:"noha",password:"4217114102"},
+                {userId:9,username:"essam",password:"8937246261"},
+                {userId:10,username:"amr",password:"5029213725"},
+                {userId:11,username:"mostafa",password:"3055943855"},
+                {userId:12,username:"mohamad",password:"7521092655"},
+                {userId:13,username:"reham",password:"3798121118"},
+                {userId:14,username:"reem",password:"9822195628"},
+                {userId:15,username:"sarah",password:"2697313779"},
+                {userId:16,username:"khaled",password:"6308540679"},
+                {userId:17,username:"amer",password:"3884521872"},
+                {userId:18,username:"omar",password:"4146788676"},
+                {userId:19,username:"seham",password:"7002196837"},
+                {userId:20,username:"aya",password:"9983665578"},
+])
+
+db.stat.insert([
+                    {userId:1,stat:0},
+                    {userId:2,stat:1},
+                    {userId:3,stat:1},
+                    {userId:4,stat:1},
+                    {userId:5,stat:1},
+                    {userId:6,stat:1},
+                    {userId:7,stat:1},
+                    {userId:8,stat:0},
+                    {userId:9,stat:0},
+                    {userId:10,stat:0},
+                    {userId:11,stat:1},
+                    {userId:12,stat:1},
+                    {userId:13,stat:1},
+                    {userId:14,stat:1},
+                    {userId:15,stat:1},
+                    {userId:16,stat:0},
+                    {userId:17,stat:0},
+                    {userId:18,stat:0},
+                    {userId:19,stat:0},
+                    {userId:20,stat:0},
+])
+
+db.user.insert([
+                    {_id:1,userName:"ahmed ali",image:"/pic/A01.png",friend:[]},
+                    {_id:2,userName:"ali salam",image:"/pic/A02.png",friend:[]},
+                    {_id:3,userName:"salam heba",image:"/pic/A03.png",friend:[]},
+                    {_id:4,userName:"heba sara",image:"/pic/A04.png",friend:[]},
+                    {_id:5,userName:"sara reem",image:"/pic/A05.png",friend:[]},
+                    {_id:6,userName:"reem maha",image:"/pic/B01.png",friend:[]},
+                    {_id:7,userName:"maha noha",image:"/pic/B02.png",friend:[]},
+                    {_id:8,userName:"noha essam",image:"/pic/B03.png",friend:[]},
+                    {_id:9,userName:"essam amr",image:"/pic/B04.png",friend:[]},
+                    {_id:10,userName:"amr mostafa",image:"/pic/B05.png",friend:[]},
+                    {_id:11,userName:"mostafa mohamad",image:"/pic/C01.png",friend:[]},
+                    {_id:12,userName:"mohamad reham",image:"/pic/C02.png",friend:[]},
+                    {_id:13,userName:"reham reem",image:"/pic/C03.png",friend:[]},
+                    {_id:14,userName:"reem sarah",image:"/pic/C04.png",friend:[]},
+                    {_id:15,userName:"sarah khaled",image:"/pic/C05.png",friend:[]},
+                    {_id:16,userName:"khaled amer",image:"/pic/D01.png",friend:[]},
+                    {_id:17,userName:"amer omar",image:"/pic/D02.png",friend:[]},
+                    {_id:18,userName:"omar seham",image:"/pic/D03.png",friend:[]},
+                    {_id:19,userName:"seham aya",image:"/pic/D04.png",friend:[]},
+                    {_id:20,userName:"aya ahmed",image:"/pic/D05.png",friend:[]}
+])
+
+db.groups.insert([
+                    {_id:1,groupName:"read",image:"/pic/Male-Avatar-Bowler-Hat-icon.png",file:"/chat/time1.txt",groupmember:[[5,1],[6,0],[7,1]],groupType:"public"},
+                    {_id:2,groupName:"write",image:"/pic/Male-Avatar-Bow-Tie-icon.png",file:"/chat/time2.txt",groupmember:[[13,1],[4,1],[12,1]],groupType:"public"},
+                    {_id:3,groupName:"run",image:"/pic/Male-Avatar-Cool-Cap-icon.png",file:"/chat/time3.txt",groupmember:[[12,1],[7,1],[10,0]],groupType:"public"},
+                    {_id:4,groupName:"chat",image:"/pic/Male-Avatar-Cool-Sunglasses-icon.png",file:"/chat/time4.txt",groupmember:[[8,0],[10,1],[8,1]],groupType:"public"},
+                    {_id:5,groupName:"program",image:"/pic/Male-Avatar-Emo-Haircut-icon.png",file:"/chat/time5.txt",groupmember:[[13,1],[8,1],[9,0]],groupType:"public"},
+                    {_id:6,groupName:"sleep",image:"/pic/Male-Avatar-Goatee-Beard-icon.png",file:"/chat/time6.txt",groupmember:[[11,1],[9,1],[4,1]],groupType:"public"},
+                    {_id:7,groupName:"eat",image:"/pic/Male-Avatar-Hair-icon.png",file:"/chat/time7.txt",groupmember:[[10,1],[10,1],[9,1]], groupType:"public"},
+                    {_id:8,groupName:"drink",image:"/pic/Male-Avatar-icon.png",file:"/chat/time8.txt",groupmember:[[9,1],[8,1],[4,1]], groupType:"public"}
+])

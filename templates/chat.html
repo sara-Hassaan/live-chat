@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Main Chat Page</title>
+		<style type="text/css">
+			#wrapper{
+				width: 800px;
+				border:1px black solid;
+				padding: 5px;
+			}
+			#btchange , #btsend {
+				width: 100px;
+				padding: 10px;
+			}
+			#username ,#message{
+				width: 600px;
+				margin: 5px;
+				padding: 5px;
+				height: 45px;
+			}
+			#chat-area{
+				border:1px black solid;
+				width: 800px;
+				height: 400px;
+			}
+		</style>
+		<script src="{{ static_url('js/jquery-3.1.1.js') }}"></script>
+			<script>
+			var userid = {{ id }} ;
+			var type   = '{{ type }}' ;
+			var uid    = {{ uid }} ;
+			var gid    = {{ gid }} ;
+			var name	=	'{{name}}';
+			var uname= 	'{{uname}}';
+		</script>
+	</head>
+	<body>
+
+	<!-- <h2> {{ name }} </h2> -->
+	<h2> {{uname}} </h2>
+	<div id="wrapper">
+	<div id="currentId"> <h3> online members</h3>
+	<br>
+	</div>
+		<div id="chat-area">
+		</div>
+		<label>Message</label><input type="text" name="message" id="message"> <button id="btsend">send</button>
+	</div>
+	</body>
+	<script  type="text/javascript">
+		var send_data
+		$(document).ready(function(){
+			console.log("test")
+			var ws = new WebSocket("ws://localhost:4444/ws")
+			ws.onopen = function (e) {
+			   var msg = {
+					"type" : "set",
+					"gid"  : gid,
+				}
+				ws.send(JSON.stringify(msg))
+				console.log("connection opened")
+			}
+			$("#btsend").click(function(){
+				console.log("gggggg")
+				msg = {
+					"type" : "send",
+					"gid"  : gid,
+					"name" : name,
+					"msg"  : $("#message").val()
+				}
+				console.log("sendgggg")
+				ws.send(JSON.stringify(msg))
+				console.log("sendgggg")
+			})
+
+			ws.onmessage = function(res){
+				console.log(res)
+				$("#chat-area").append("<p>"+res.data+"</p");
+			}
+
+
+		});
+
+	</script>
+
+</html>

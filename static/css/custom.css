@@ -1,0 +1,26 @@
+.navbar-nav > li > a:hover
+{
+  color: white;
+  cursor: pointer;
+}
+.navbar-nav > li > a.active
+{
+  color: white;
+}
+
+.thumbnail > img
+{
+  max-width: 40%;
+}
+
+.lbimg{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+#brd ul{
+  list-style: none;
+  margin: 0 auto;
+  width: 40%;
+}

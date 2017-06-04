@@ -1,0 +1,29 @@
+pymongo
+=============
+0- installation
+    python3 -m pip install pymongo
+    
+1- make a db connection
+    from pymongo import *
+    client = MongoClient()  or MongoClient('server','port')
+    
+2- select db with name livechat to be used
+    db_livechat = client.[database_name] ==> client.livechat
+
+3- select specific collection to perform action on it
+    collec_user = db_livechat.[collection_name] ==> db_livechat.user
+    
+4- find a record in user collection
+    collec_user.find_one({"key":"value"}) ==> collec_user({"_id":2})
+    if nothing to return None is returned
+    
+5- to insert a single document
+    collec_user.insert_one([{json object}])  ==> collec_user.insert_one({"_id":1,"name":"ahmed"})
+
+6- to find a record and update 
+    Syntax : find_one_and_update(filter, update, projection=None, sort=None, return_document=ReturnDocument.BEFORE, **kwargs)
+    db_livechat.collec_user.find_one_and_update({'_id': 665}, {'$inc': {'count': 1}, '$set': {'done': True}})
+                                                                                 filter              update
+7- to delete a record
+    Syntax: delete_one(filter, collation=None)
+    db.test.count({'x': 1})

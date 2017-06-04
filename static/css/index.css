@@ -1,0 +1,62 @@
+ #mian-menu{
+        list-style: none;
+    }
+    ul.topnav {
+        float: left;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0;
+        overflow: hidden;
+        width: 49%;
+    }
+
+    ul.topnav li {float: left;}
+
+    ul.topnav li {
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    ul.topnav li:hover {background-color: #555;color: white;}
+
+    .right{
+            float: right; 
+            width: 50%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    ul.right li {float: right;color:black;} 
+
+
+
+/***********heba**************/
+
+#top, #mid, #bot
+{
+	width: 100%;
+	height: 300px;
+	margin-top: 20px;
+}
+.per
+{
+	float: left;
+	height: 160px;
+	width: 180px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	background-color: #eee;
+	text-align: center;
+	padding: 10px;
+}
+.per img{
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
